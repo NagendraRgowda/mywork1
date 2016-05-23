@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX DEMO</title>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$("#factorial").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"factorial.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	});
+	
+	$("#isprime").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"isprime.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	}); 
+	
+	$("#reverse").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"reverse.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	}); 
+	
+	$("#palindrome").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"palindrome.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	});
+	
+	$("#sumofdigit").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"sumofdigit.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	});
+	
+	$("#gettable").click(function(){
+		var num = $("#num").val();
+		$.ajax({
+			url:"gettable.do",
+			data:{"num":num},
+			success:function(data){
+				$("#result").html(data);
+				$("#num").val("");
+			}
+		});
+	});
+	
+	
+});
+
+</script>
+
+</head>
+<body>
+<!-- <form action="*.do" method="post"> -->
+	<h4>Welcome to Number Programs</h4><br>
+	<label>Enter a number</label>
+	<input type = "text" id="num" name="num1"  placeholder="enter number">
+	<br>
+	<button id="factorial">Get Factorial</button>
+	<button id="isprime">Check prime</button>
+	<button id="reverse">Get Reverse</button>
+	<button id="palindrome">Check palindrome</button>
+	<button id="sumofdigit">Get Sum of Digits</button>
+	<button id="gettable">Get Table</button>
+	<hr>
+	<div id = "result">
+	
+	</div>
+	<!-- </form> -->
+</body>
+</html>
